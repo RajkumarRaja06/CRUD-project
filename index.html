@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+<body>
+  <div class="main-border">
+    <div class="button-border">
+      <div class="button-div">
+        <button class="company-button">company</button>
+        <button class="employee-button">Employee</button>
+        <button class="animal-button">animal</button>
+      </div>
+    </div>
+    <div class="table-border">
+      <div class="companyList-table" id="myTable">
+        <div class="CompanyDetailsgrid" id="companyDetails">
+          <div class="id title">ID</div>
+          <div class="name title">name</div>
+          <div class="address title">address</div>
+          <div class="delete title">delete</div>
+        </div>
+      </div>
+      <div class="add-new-company button"> 
+        <button onclick="newCompanyRow()">Add New Company</button> 
+      </div>
+      <div class="company-detail" id="myForm">
+        <h3>Company Details :</h3>
+        <div class="idCompanyDetail">
+          <div class="column1-companyDetail"><label>ID :</label></div>
+          <div class="column2-companyDetail"><div type="Number" id="id" name="number"></div></div>
+        </div>
+        <div class="nameCompanyDetail">
+          <div class="column1-companyDetail"><label>Name</label></div>
+          <div class="column2-companyDetail"><input type="text" id="name" name="text"><span id="nameMessage"></span></div>
+          
+        </div>
+        <div class="addressCompanyDetail">
+          <div class="column1-companyDetail"><label>Address</label></div>
+          <div class="column2-companyDetail"><input type="text" id="company" name="text"><span id="companyMessage"></span></div>
+          
+        </div>
+        <div class="buttonCompanyDetail">
+          <div class="add companyDetailButton">
+            <button onclick="add()" id="add">Add</button>
+            <button class="updateButton" id="update"onclick ="updateRecord(this)">Update</button>
+          </div>
+          <div class="cancel companyDetailButton"><button onclick="cancelButton()">Cancel</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="javaScript.js"></script>
+</body>
+</html>

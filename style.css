@@ -1,0 +1,209 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-border {
+  display: flex;
+}
+
+.main-border .button-border {
+  border: 2px;
+  border-style: solid none solid solid;
+  border-color: #808080;
+  width: 30vw;
+  height: 98vh;
+  margin: 7px 0px 7px 7px;
+  position: relative;
+}
+
+.main-border .button-border .button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-border .button-border .button-div .company-button {
+  width: 125px;
+  height: 55px;
+  border-radius: 30px;
+  border: 3.5px solid #228B22;
+  color: #00563B;
+  background-color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 90px;
+}
+
+.main-border .button-border .button-div .employee-button {
+  width: 125px;
+  height: 55px;
+  border-radius: 6.5px;
+  border: 3.5px solid #00AB66;
+  color: #00AB66;
+  background-color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+.main-border .button-border .button-div .animal-button {
+  width: 125px;
+  height: 55px;
+  border-radius: 6.5px;
+  border: 3.5px solid #00AB66;
+  color: #00AB66;
+  background-color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+.main-border .table-border {
+  border: 2px;
+  border-style: solid solid solid solid;
+  border-color: #808080;
+  height: 98vh;
+  margin: 7px 7px 7px 7px;
+  padding: 50px 50px 50px 50px ;
+}
+
+.main-border .table-border .companyList-table { 
+  width: 60vw;
+}
+
+.main-border .table-border .companyList-table .CompanyDetailsgrid {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  text-transform: capitalize;
+  background-color: rebeccapurple;
+}
+
+.main-border .table-border .companyList-table .CompanyDetailsgrid .id, .name, .address, .delete {
+  border: 1px solid black;
+  width: 15vw;
+  height: 3vh;
+  background-color: #6f98b7;
+  color: #ffffff;
+}
+
+.main-border .table-border .add-new-company {
+  float: right;
+  margin-top: 15px;
+}
+
+.main-border .table-border .add-new-company button {
+  background-color: #3CB371;
+  width: 140px;
+  height: 25px;
+  font-weight: 600;
+}
+
+.main-border .table-border .add-new-company button:hover {
+  background-color: #32CD32;
+  cursor: pointer;
+}
+
+.main-border .table-border .company-detail {
+  margin-top: 230px;
+  width: 60vw;
+}
+
+.main-border .table-border .company-detail h3 {
+  margin-bottom: 15px;
+}
+
+.main-border .table-border .company-detail .idCompanyDetail, .nameCompanyDetail, .addressCompanyDetail, .row4-companyDetail {
+  display: flex;
+}
+
+.main-border .table-border .company-detail .column1-companyDetail {
+  border: 1px solid black;
+  width: 18vw;
+  height: 4vh;
+  padding: 5px 10px;
+}
+
+.main-border .table-border .company-detail .column2-companyDetail {
+  border: 1px solid black;
+  width: 42vw;
+  height: 4vh;
+  padding: 5px 10px;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .add button, .cancel button {
+  width: 48px;
+  height: 21px;
+  border: 1px solid black;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .add .updateButton {
+  display: none;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .add button {
+  background-color: #3CB371 ;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .cancel button {
+  background-color: #550000;
+  color: #ffffff;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .cancel button:hover {
+  background-color: #b93e3e;
+  cursor: pointer;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail .add button:hover {
+  background-color: #32CD32;
+  cursor: pointer;
+}
+
+.main-border .table-border .company-detail .buttonCompanyDetail {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  height: 4.5vh;
+  border: 1px solid black;
+  padding: 5px 13px;
+}
+
+/*js code style*/
+
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.row #column1, #column2, #column3, #column4 {
+  border: 1px solid black;
+  width: 15vw;
+  height: 3.5vh;
+  background-color: #AFEEEE;
+  text-align: center;
+}
+
+.delete-button {
+  height: 21px;
+  width: 55px;
+  background-color: #550000;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #b93e3e;
+  cursor: pointer;
+}
+
+#companyMessage, #nameMessage {
+ color: #550000;
+ margin-left: 20px;
+ font-size: 13.5px;
+}
