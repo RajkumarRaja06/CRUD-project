@@ -32,24 +32,30 @@
         </div>
         <div class="nameCompanyDetail">
           <div class="column1-companyDetail"><label>Name</label></div>
-          <div class="column2-companyDetail"><input type="text" id="name" name="text"><span id="nameMessage"></span></div>
-          
+          <div class="column2-companyDetail"><input type="text" id="name" name="text">
+            <div class="messageBox">
+              <span id="nameMessage" class="errorMsg"></span>
+            </div>
+          </div>
         </div>
         <div class="addressCompanyDetail">
           <div class="column1-companyDetail"><label>Address</label></div>
-          <div class="column2-companyDetail"><input type="text" id="company" name="text"><span id="companyMessage"></span></div>
-          
+          <div class="column2-companyDetail"><input type="text" id="company" name="text">
+            <div class="messageBox">
+              <span id="companyMessage" class="errorMsg"></span>
+            </div>
+          </div>
         </div>
         <div class="buttonCompanyDetail">
           <div class="add companyDetailButton">
-            <button onclick="add()" id="add">Add</button>
-            <button class="updateButton" id="update"onclick ="updateRecord(this)">Update</button>
+            <button onclick="validation()" id="add" type="button">Add</button>
           </div>
           <div class="cancel companyDetailButton"><button onclick="cancelButton()">Cancel</button></div>
         </div>
       </div>
     </div>
   </div>
-  <script src="javaScript.js"></script>
+  <div id="show"></div>
+  <script  src="javaScript.js"></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
-let currentSelectedRow = 0;
+
+var currentSelectedRow = 0;
 var nameMessage = document.getElementById('nameMessage');
 var companyMessage = document.getElementById('companyMessage');
 var companyName = document.getElementById('name');
 var companyAddress = document.getElementById('company');
+var errorMsg1 = document.getElementsByClassName('errorMsg1');
+var errorMsg2 = document.getElementsByClassName('errorMsg2');
 
 function userInputData() {
   var id1 = document.getElementById('myTable').children.length;
@@ -12,27 +15,38 @@ function userInputData() {
   return formData;
 }
 
-function add() {
+function validation() {
+  var text = document.getElementById("add").textContent;
   var userGivenData = userInputData();
   debugger;
   if (companyName.value =="" && companyAddress.value =="") {
     nameMessage.innerHTML ="Please fill out this field.";
-    companyMessage.innerHTML ="Please fill out this field.";
+  companyMessage.innerHTML ="Please fill out this field.";
   }
   else if (companyName.value === "") {
     nameMessage.innerHTML ="Please fill out this field.";
+   
     companyMessage.innerHTML ="";
   }
   else if (companyAddress.value ==="") {
     companyMessage.innerHTML ="Please fill out this field.";
     nameMessage.innerHTML = "";
   }
-  else{
+  else if ("Add" === text){
     nameMessage.innerHTML = "";
     companyMessage.innerHTML = "";
     addRow(userGivenData);
   }
+  else if ("Update" === text) {
+    nameMessage.innerHTML = "";
+    companyMessage.innerHTML = "";
+    updateRecord();
+  }
   emptyValue();
+}
+
+function snackBar() {
+  
 }
 
 function addRow(userGivenData) {
@@ -58,27 +72,30 @@ function addRow(userGivenData) {
 
   var column4 = document.createElement('div');
   column4.id = 'column4';
-  column4.innerHTML = `<button class="delete-button" onclick='editTask(this)' id='editButton'>edit</button>
-  <button class="delete-button" onclick='deleteRow()' id='deleteButton'>Delete</button>`;
+  column4.innerHTML = `<button class="delete-button" id='deleteButton' onclick='deleteRow(this)'>Delete</button>`;
   document.getElementById(row.id).appendChild(column4);
+  
+  column1.addEventListener('click', editTask);
+  column2.addEventListener('click', editTask);
+  column3.addEventListener('click', editTask);
+  column4.addEventListener('click', deleteRow);
+
 }
 
-var editTask = (e) => {
+function editTask(event) {
   debugger;
-  var selectedTask = e.parentElement.parentElement;
-  currentSelectedRow = e.parentElement.parentElement.id
-  document.getElementById("id").value = selectedTask.childNodes[0].innerHTML;
-  document.getElementById("name").value = selectedTask.childNodes[1].innerHTML;
-  document.getElementById("company").value = selectedTask.childNodes[2].innerHTML;
+  var selectedRow = event.target.parentElement;
+  console.log(selectedRow);
+  currentSelectedRow = event.target.parentElement.id;
+  document.getElementById("id").value = selectedRow.childNodes[0].innerHTML;
+  document.getElementById("name").value = selectedRow.childNodes[1].innerHTML;
+  document.getElementById("company").value = selectedRow.childNodes[2].innerHTML;
 
-  var x = document.getElementById('add');
-  x.style.display  ="none";
-  var y = document.getElementById('update');
-  y.style.display  ="block";
+  var text = document.getElementById('add');
+  text.textContent = 'Update';
+}
 
-};
-
-function updateRecord(selectedRow) {
+function updateRecord() {
   debugger;
   var selectedRow = document.querySelectorAll('.row');
   var id = document.getElementById("id").value;
@@ -89,14 +106,10 @@ function updateRecord(selectedRow) {
   selectedRow[currentSelectedRow-1].childNodes[1].innerText = name;
   selectedRow[currentSelectedRow-1].childNodes[2].innerText = company;
   
-  var x = document.getElementById('update');
-  x.style.display  ="none";
-  var y = document.getElementById('update');
-  y.style.display  ="block";
+  var text = document.getElementById('add');
+  text.textContent = 'Add';
   emptyValue();
 }
-
-
 
 function emptyValue() {
   document.getElementById('id').value = "";
@@ -104,13 +117,10 @@ function emptyValue() {
   document.getElementById('company').value = "";
 }
 
-function deleteRow() {
-  var allROw = document.querySelectorAll(".row");
-  for (var index = 0; index < allROw.length; index++) {
-    allROw[index].querySelector("#deleteButton").addEventListener("click",function() {
-      this.closest(".row").remove();
-    });
-  }
+function deleteRow(event) {
+  // debugger;
+  var deleteData = event.target;
+  deleteData.parentElement.parentElement.remove();
 }
 
 function cancelButton() {
@@ -142,9 +152,11 @@ function newCompanyRow() {
 
   var column4 = document.createElement('div');
   column4.id = 'column4';
-  column4.innerHTML = `<button class="delete-button" onclick='editTask(this)' id='editButton'>edit</button>
-  <button class="delete-button" onclick='deleteRow()' id='deleteButton'>Delete</button>`;
+  column4.innerHTML = `<button class="delete-button" id='deleteButton'>Delete</button>`;
   document.getElementById('row').appendChild(column4);
+  
+  column1.addEventListener('click', editTask);
+  column2.addEventListener('click', editTask);
+  column3.addEventListener('click', editTask);
+  column4.addEventListener('click', deleteRow);
 }
-
-
