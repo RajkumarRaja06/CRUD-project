@@ -175,6 +175,18 @@
   padding: 5px 13px;
 }
 
+#id, .formName, .formCompany {
+  border: 1px solid black;
+  width: 13vw;
+  height: 2.5vh;
+  padding-left: 17px;
+  
+}
+
+#id {
+  display: none;
+}
+
 /*js code style*/
 
 .row {
@@ -238,4 +250,20 @@
   100% {
     opacity: 0;    
   }
+}
+
+
+/* JSON File Style */
+
+.jsonData {
+  display: flex;
+  flex-direction: row;
+}
+
+.jsonColumn1, .jsonButton {
+  border: 1px solid black;
+  width: 15vw;
+  height: 3.5vh;
+  background-color: #AFEEEE;
+  text-align: center;
 }

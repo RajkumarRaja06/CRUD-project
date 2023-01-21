@@ -22,17 +22,19 @@
         </div>
       </div>
       <div class="add-new-company button"> 
-        <button onclick="newCompanyRow()">Add New Company</button> 
+        <button id="addNew">Add New Company</button> 
       </div>
       <div class="company-detail" id="myForm">
         <h3>Company Details :</h3>
         <div class="idCompanyDetail">
           <div class="column1-companyDetail"><label>ID :</label></div>
-          <div class="column2-companyDetail"><div type="Number" id="id" name="number"></div></div>
+          <div class="column2-companyDetail">
+            <input type="text" id="id" class="formId">
+          </div>
         </div>
         <div class="nameCompanyDetail">
           <div class="column1-companyDetail"><label>Name</label></div>
-          <div class="column2-companyDetail"><input type="text" id="name" name="text">
+          <div class="column2-companyDetail"><input type="text" id="name" class="formName" name="text">
             <div class="messageBox">
               <span id="nameMessage" class="errorMsg"></span>
             </div>
@@ -40,7 +42,7 @@
         </div>
         <div class="addressCompanyDetail">
           <div class="column1-companyDetail"><label>Address</label></div>
-          <div class="column2-companyDetail"><input type="text" id="company" name="text">
+          <div class="column2-companyDetail"><input type="text" id="company" class="formCompany" name="text">
             <div class="messageBox">
               <span id="companyMessage" class="errorMsg"></span>
             </div>
@@ -55,7 +57,8 @@
       </div>
     </div>
   </div>
-  <div id="show"></div>
-  <script  src="javaScript.js"></script>
+  <script type="text/javascript" src="javaScript.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  
 </body>
 </html>

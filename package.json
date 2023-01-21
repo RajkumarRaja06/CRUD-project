@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "load": "json-server --watch db.json --port 3004"
+    "load": "json-server --watch db.json --port 3005"
 
   },
   "repository": {
